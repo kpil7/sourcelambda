@@ -24,19 +24,6 @@ jobs:
       - name: Run Tests
         run: npm test
 
-      # - name: Package Test Lambda Function
-      #   run: zip -r test_function.zip .
-
-      # - name: Deploy to Test Lambda Function
-      #   if: success()
-      #   env:
-      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      #   run: |
-      #     aws lambda update-function-code \
-      #       --function-name sourcelambdatestcases \
-      #       --zip-file fileb://test_function.zip \
-      #       --region eu-north-1
 
       - name: Package Source Lambda Function
         run: |
