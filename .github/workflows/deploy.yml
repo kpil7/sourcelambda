@@ -39,7 +39,7 @@ jobs:
             --region eu-north-1
 
       - name: Package Source Lambda Function
-        run: zip -r source_function.zip index.js 
+        run: zip -r source_function.zip .
 
       - name: Deploy to Production Lambda
         if: success()
