@@ -41,6 +41,12 @@ jobs:
       - name: Package Source Lambda Function
         run: zip -r source_function.zip . -x@.zipignore
 
+      - name: List zip contents
+        run: |
+          unzip -l source_function.zip | sort -n -r | head -n 20
+          echo "Total zip size:"
+          du -h source_function.zip  
+
       - name: Deploy to Production Lambda
         if: success()
         env:
