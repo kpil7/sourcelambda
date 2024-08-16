@@ -49,7 +49,7 @@ jobs:
           -x "*.md" \
           -x "*.yml" \
           -x "package-lock.json"\
-          # -x "test_function.zip"
+          
 
       - name: List zip contents
         run: |
