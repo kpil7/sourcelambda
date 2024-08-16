@@ -39,7 +39,16 @@ jobs:
             --region eu-north-1
 
       - name: Package Source Lambda Function
-        run: zip -r source_function.zip . -x@.zipignore
+        run: |
+          zip -r source_function.zip . \
+          -x "node_modules/*" \
+          -x "test/*" \
+          -x ".git/*" \
+          -x ".github/*" \
+          -x "*.log" \
+          -x "*.md" \
+          -x "*.yml" \
+          -x "package-lock.json"
 
       - name: List zip contents
         run: |
