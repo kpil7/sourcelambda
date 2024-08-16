@@ -67,5 +67,5 @@ jobs:
         run: |
           aws lambda update-function-configuration \
             --function-name sourcelambda \
-            --layers arn:aws:lambda:eu-north-1:022499012515:layer:sourceLambda:1 \
+            --layers ${{ secrets.LAMBDA_LAYER_ARN }}  \
             --region eu-north-1
